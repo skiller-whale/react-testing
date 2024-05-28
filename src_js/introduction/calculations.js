@@ -9,7 +9,7 @@ export const calculateDrivingScore = (distance, incidents) => {
 };
 
 export const calculateDrivingLevel = (drivingScore) => {
-  if (drivingScore >= 90) {
+  if (drivingScore > 90) {
     return DrivingLevel.verySafe;
   } else if (drivingScore >= 70) {
     return DrivingLevel.safe;

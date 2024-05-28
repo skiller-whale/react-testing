@@ -1,5 +1,5 @@
 import { act, renderHook } from "@testing-library/react";
-import useCursor from "./useCursor";
+import useCursor from "./useCursor.ts";
 
 const testItems = [
   { id: "1", name: "Item 1" },

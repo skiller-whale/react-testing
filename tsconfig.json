@@ -10,7 +10,8 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "allowJs": true
   },
   "include": ["setup-jest.ts", "server", "src_js", "src_ts"],
   "references": [{ "path": "./tsconfig.node.json" }]

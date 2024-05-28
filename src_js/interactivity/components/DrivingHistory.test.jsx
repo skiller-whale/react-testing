@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import TripsProvider, { SetTripsProvider } from "../TripsState.tsx";
-import DrivingHistory from "./DrivingHistory.tsx";
-import useCursor from "../hooks/useCursor.ts";
+import TripsProvider, { SetTripsProvider } from "../TripsState.jsx";
+import DrivingHistory from "./DrivingHistory.jsx";
+import useCursor from "../hooks/useCursor.js";
 
 const testTrips = [
   {

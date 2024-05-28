@@ -1,8 +1,8 @@
 import { useState } from "react";
-import DrivingAssessment from "./components/DrivingAssessment.tsx";
-import DrivingHistory from "./components/DrivingHistory.tsx";
-import useCursor from "./hooks/useCursor.ts";
-import TripsProvider, { SetTripsProvider } from "./TripsState.tsx";
+import DrivingAssessment from "./components/DrivingAssessment.jsx";
+import DrivingHistory from "./components/DrivingHistory.jsx";
+import useCursor from "./hooks/useCursor.js";
+import TripsProvider, { SetTripsProvider } from "./TripsState.jsx";
 
 const App = ({ trips: initialTrips }) => {
   const [trips, selectedTrip, selectTrip, updateSelectedTrip] =

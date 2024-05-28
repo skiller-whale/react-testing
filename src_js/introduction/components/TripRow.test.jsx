@@ -1,9 +1,8 @@
 import { render } from "@testing-library/react";
-import type { Trip } from "../../../server/api.ts";
-import TripRow from "./TripRow.tsx";
+import TripRow from "./TripRow.jsx";
 
 describe("TripRow component", () => {
-  const testTrip: Trip = {
+  const testTrip = {
     id: "trip-1",
     confirmed: true,
     date: "1st July 2020",
