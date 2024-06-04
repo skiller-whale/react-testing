@@ -21,8 +21,8 @@ const TestTripsProviders = ({ children }: PropsWithChildren) => {
 
 describe("DrivingHistory", () => {
   test.skip("selects trip when clicked", async () => {
-    render(<DrivingHistory />, { wrapper: TestTripsProviders });
     const user = userEvent.setup();
+    render(<DrivingHistory />, { wrapper: TestTripsProviders });
     const tripRow = screen.getByRole("button", { name: /Select trip 1/i });
     await user.click(tripRow);
     expect(tripRow).toHaveClass("outline");

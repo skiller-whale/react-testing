@@ -8,10 +8,7 @@ const testItems = [
 ];
 
 describe("useCursor", () => {
-  const items = 0;
-  const selectedItem = 1;
-  const selectItem = 2;
-  const updateSelectedItem = 3;
+  const [items, selectedItem, selectItem, updateSelectedItem] = [0, 1, 2, 3];
 
   test("returns initial items with none selected", () => {
     const { result } = renderHook(() => useCursor(testItems));
