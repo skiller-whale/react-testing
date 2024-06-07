@@ -1,10 +1,10 @@
-import type { PropsWithChildren } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import type { PropsWithChildren } from "react";
 import type { Trip } from "../../../server/api.ts";
 import TripsProvider, { SetTripsProvider } from "../TripsState.tsx";
-import DrivingHistory from "./DrivingHistory.tsx";
 import useCursor from "../hooks/useCursor.ts";
+import DrivingHistory from "./DrivingHistory.tsx";
 
 const testTrips: Trip[] = [
   {
@@ -12,6 +12,7 @@ const testTrips: Trip[] = [
     date: "11th May 2023",
     distance: 10,
     incidents: 0,
+    confirmed: true,
   },
 ];
 

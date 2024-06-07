@@ -9,7 +9,8 @@ const testTrips: Trip[] = [
     date: "11th May 2023",
     distance: 10,
     incidents: 0,
-  }
+    confirmed: true,
+  },
 ];
 
 describe("App", () => {
@@ -21,7 +22,9 @@ describe("App", () => {
 
   test("renders 'Assessment' tab by default", () => {
     render(<App trips={testTrips} />);
-    const heading = screen.getByRole("heading", { name: /Overall Driving Assessment/i });
+    const heading = screen.getByRole("heading", {
+      name: /Overall Driving Assessment/i,
+    });
     expect(heading).toBeInTheDocument();
   });
 

@@ -11,8 +11,9 @@
     "esModuleInterop": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "allowJs": true
+    "allowJs": true,
+    "types": ["vitest/globals"]
   },
-  "include": ["setup-jest.ts", "server", "src_js", "src_ts"],
+  "include": ["vitest.setup.ts", "server", "src_js", "src_ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,5 +1,5 @@
+import { useSetTripsContext, useTripsContext } from "../TripsState.tsx";
 import TripRow from "./TripRow.tsx";
-import { useTripsContext, useSetTripsContext } from "../TripsState.tsx";
 
 const DrivingHistory = () => {
   const [trips, selectedTrip] = useTripsContext();

@@ -1,12 +1,15 @@
 import { createContext, useContext } from "react";
-import type useCursor from "./hooks/useCursor.ts";
 import type { Trip } from "../../server/api.ts";
+import type useCursor from "./hooks/useCursor.ts";
 
 type Cursor = ReturnType<typeof useCursor<Trip>>;
 
 const TripsContext = createContext<[Cursor[0], Cursor[1]]>([[], undefined]);
 
-const SetTripsContext = createContext<[Cursor[2], Cursor[3]]>([() => {}, () => {}]);
+const SetTripsContext = createContext<[Cursor[2], Cursor[3]]>([
+  () => {},
+  () => {},
+]);
 
 export default TripsContext.Provider;
 

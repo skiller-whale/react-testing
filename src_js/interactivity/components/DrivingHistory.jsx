@@ -1,5 +1,5 @@
+import { useSetTripsContext, useTripsContext } from "../TripsState.jsx";
 import TripRow from "./TripRow.jsx";
-import { useTripsContext, useSetTripsContext } from "../TripsState.jsx";
 
 const DrivingHistory = () => {
   const [trips, selectedTrip] = useTripsContext();

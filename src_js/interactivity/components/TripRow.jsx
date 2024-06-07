@@ -20,8 +20,12 @@ const TripRow = ({ tripNumber, trip, selectedTrip, selectTrip }) => {
     >
       <td className="p-1">{tripNumber}</td>
       <td className="p-1">{date}</td>
-      <td className="p-1" data-testid={`distance-${trip.id}`}>{distance}</td>
-      <td className="p-1" data-testid={`incidents-${trip.id}`}>{incidents}</td>
+      <td className="p-1" data-testid={`distance-${trip.id}`}>
+        {distance}
+      </td>
+      <td className="p-1" data-testid={`incidents-${trip.id}`}>
+        {incidents}
+      </td>
       <td className="p-1">
         <span
           className="w-8 h-8 flex justify-center items-center rounded-full"

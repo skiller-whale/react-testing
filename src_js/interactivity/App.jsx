@@ -1,8 +1,8 @@
 import { useState } from "react";
+import TripsProvider, { SetTripsProvider } from "./TripsState.jsx";
 import DrivingAssessment from "./components/DrivingAssessment.jsx";
 import DrivingHistory from "./components/DrivingHistory.jsx";
 import useCursor from "./hooks/useCursor.js";
-import TripsProvider, { SetTripsProvider } from "./TripsState.jsx";
 
 const App = ({ trips: initialTrips }) => {
   const [trips, selectedTrip, selectTrip, updateSelectedTrip] =
@@ -33,11 +33,7 @@ const App = ({ trips: initialTrips }) => {
             </button>
           </nav>
           <main className="shadow">
-            {tab === "Assessment" ? (
-              <DrivingAssessment />
-            ) : (
-              <DrivingHistory />
-            )}
+            {tab === "Assessment" ? <DrivingAssessment /> : <DrivingHistory />}
           </main>
         </div>
       </SetTripsProvider>

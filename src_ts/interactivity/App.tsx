@@ -1,9 +1,9 @@
 import { useState } from "react";
 import type { Trip } from "../../server/api.ts";
+import TripsProvider, { SetTripsProvider } from "./TripsState.tsx";
 import DrivingAssessment from "./components/DrivingAssessment.tsx";
 import DrivingHistory from "./components/DrivingHistory.tsx";
 import useCursor from "./hooks/useCursor.ts";
-import TripsProvider, { SetTripsProvider } from "./TripsState.tsx";
 
 type Props = {
   trips: Trip[];
@@ -38,11 +38,7 @@ const App = ({ trips: initialTrips }: Props) => {
             </button>
           </nav>
           <main className="shadow">
-            {tab === "Assessment" ? (
-              <DrivingAssessment />
-            ) : (
-              <DrivingHistory />
-            )}
+            {tab === "Assessment" ? <DrivingAssessment /> : <DrivingHistory />}
           </main>
         </div>
       </SetTripsProvider>
