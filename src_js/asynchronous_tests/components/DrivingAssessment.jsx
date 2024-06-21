@@ -1,12 +1,9 @@
-import type { Trip } from "../../../server/trips.ts";
-import { calculateDrivingAssessment } from "../calculations.ts";
-import { DrivingLevelDisplay } from "../constants.ts";
+import { calculateDrivingAssessment } from "../calculations.js";
+import { DrivingLevelDisplay } from "../constants.js";
+import { useTripsContext } from "../TripsState.jsx";
 
-type Props = {
-  trips: Trip[];
-};
-
-const DrivingAssessment = ({ trips }: Props) => {
+const DrivingAssessment = () => {
+  const trips = useTripsContext();
   const {
     drivingScore,
     drivingLevel,

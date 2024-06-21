@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Trip } from "../../server/api.ts";
+import type { Trip } from "../../server/trips.ts";
 import DrivingAssessment from "./components/DrivingAssessment.tsx";
 import DrivingHistory from "./components/DrivingHistory.tsx";
 

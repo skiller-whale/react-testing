@@ -1,74 +1,50 @@
 import { Router } from "express";
+import { generateRandomTrips } from "./trips.ts";
 
-export type Trip = {
-  id: string;
-  date: string;
-  incidents: number;
-  distance: number;
-  confirmed?: boolean;
-};
+const trips = generateRandomTrips();
 
 const api = Router();
 
 api.get("/trips", (_, res) => {
-  const trips = generateRandomTrips();
   setTimeout(() => {
     res.json({ trips });
   }, 300);
 });
 
+api.post("/trips/reset", (_, res) => {
+  while (trips.length) trips.pop();
+  trips.push(...generateRandomTrips());
+  setTimeout(() => {
+    res.json({ trips });
+  }, 300);
+});
+
+api.get("/trips/:id", (req, res) => {
+  const { id } = req.params;
+  const trip = trips.find((trip) => trip.id === id);
+  if (trip) {
+    setTimeout(() => {
+      res.json({ trip })
+    }, 300);
+  } else {
+    res.status(404).send();
+  }
+});
+
+api.post("/trips/:id/confirm", (req, res) => {
+  const { id } = req.params;
+  const trip = trips.find((trip) => trip.id === id);
+  console.log(id)
+  console.log(trip)
+  if (trip) {
+    trip.confirmed = true;
+    setTimeout(() => {
+      res.json({ trip })
+    }, 300);
+  } else {
+    res.status(404).send();
+  }
+});
+
 export default api;
 
-const getRandomInt = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-const generateRandomTrips  = (): Trip[] => {
-  const trips: Trip[] = [
-    {
-      id: "trip-1",
-      date: "1st July 2020",
-      incidents: getRandomInt(1, 2),
-      distance: 30,
-      confirmed: true,
-    },
-    {
-      id: "trip-2",
-      date: "3rd July 2020",
-      incidents: getRandomInt(1, 6),
-      distance: 20,
-      confirmed: true,
-    },
-    {
-      id: "trip-3",
-      date: "5th July 2020",
-      incidents: 0,
-      distance: 8,
-      confirmed: true,
-    },
-    {
-      id: "trip-4",
-      date: "8th July 2020",
-      incidents: getRandomInt(1, 12),
-      distance: 80,
-      confirmed: true,
-    },
-    {
-      id: "trip-5",
-      date: "12th July 2020",
-      // score of 90
-      incidents: 10,
-      distance: 100,
-      confirmed: true,
-    },
-  ];
-
-  for (let i = 0; i < getRandomInt(2, 5); i++) {
-    trips.push({
-      id: `trip-${trips.length + 1}`,
-      date: `${13 + i}th July 2020`,
-      incidents: getRandomInt(10, 40),
-      distance: getRandomInt(40, 60),
-    });
-  }
-
-  return trips;
-};

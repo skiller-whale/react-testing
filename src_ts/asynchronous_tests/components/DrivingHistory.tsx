@@ -1,11 +1,9 @@
-import type { Trip } from "../../../server/trips.ts";
+import { useTripsContext } from "../TripsState.tsx";
 import TripRow from "./TripRow.tsx";
 
-type Props = {
-  trips: Trip[];
-};
+const DrivingHistory = () => {
+  const trips = useTripsContext();
 
-const DrivingHistory = ({ trips }: Props) => {
   return (
     <>
       <header className="p-6 bg-slate-100 text-xl font-semibold">
@@ -30,13 +28,14 @@ const DrivingHistory = ({ trips }: Props) => {
               <th scope="col" className="p-1 text-left">
                 Score
               </th>
+              <th></th>
             </tr>
           </thead>
-          <body>
+          <tbody>
             {trips.map((trip, index) => (
               <TripRow key={trip.id} trip={trip} tripNumber={index + 1} />
             ))}
-          </body>
+          </tbody>
         </table>
       </main>
     </>

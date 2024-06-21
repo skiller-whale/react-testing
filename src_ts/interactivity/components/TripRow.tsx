@@ -1,4 +1,4 @@
-import type { Trip } from "../../../server/api.ts";
+import type { Trip } from "../../../server/trips.ts";
 import {
   calculateDrivingLevel,
   calculateDrivingScore,

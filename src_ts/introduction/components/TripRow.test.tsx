@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import type { Trip } from "../../../server/api.ts";
+import type { Trip } from "../../../server/trips.ts";
 import TripRow from "./TripRow.tsx";
 
 describe("TripRow component", () => {

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import type { Trip } from "../../server/api.ts";
+import type { Trip } from "../../server/trips.ts";
 import App from "./App.tsx";
 
 const testTrips: Trip[] = [

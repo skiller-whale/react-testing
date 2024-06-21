@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import type { PropsWithChildren } from "react";
-import type { Trip } from "../../../server/api.ts";
+import type { Trip } from "../../../server/trips.ts";
 import TripsProvider, { SetTripsProvider } from "../TripsState.tsx";
 import useCursor from "../hooks/useCursor.ts";
 import DrivingHistory from "./DrivingHistory.tsx";
