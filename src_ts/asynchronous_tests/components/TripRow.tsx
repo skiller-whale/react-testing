@@ -52,7 +52,7 @@ const TripRow = ({ tripNumber, trip }: Props) => {
           disabled={confirming || trip.confirmed}
           onClick={confirm}
         >
-          {confirming ? "..." : trip.confirmed ? "Confirmed" : "Confirm"}
+          {confirming ? "Confirming..." : trip.confirmed ? "Confirmed" : "Confirm"}
         </button>
       </td>
     </tr>
