@@ -3,11 +3,11 @@ import type { Dispatch, SetStateAction } from "react";
 import type { Trip } from "../../../server/trips.ts";
 
 export default (trips: Trip[], setTrips: Dispatch<SetStateAction<Trip[]>>) => ({
-  fetchTrips: vi.fn(async () => {
+  fetchTrips: jest.fn(async () => {
     await delay(200);
     return trips;
   }),
-  confirmTrip: vi.fn(async (tripId: string) => {
+  confirmTrip: jest.fn(async (tripId: string) => {
     await delay(200);
     const trip = trips.find((trip) => trip.id === tripId);
     if (!trip) {

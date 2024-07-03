@@ -1,11 +1,11 @@
 import { delay } from "msw";
 
 export default (trips, setTrips) => ({
-  fetchTrips: vi.fn(async () => {
+  fetchTrips: jest.fn(async () => {
     await delay(200);
     return trips;
   }),
-  confirmTrip: vi.fn(async (tripId) => {
+  confirmTrip: jest.fn(async (tripId) => {
     await delay(200);
     const trip = trips.find((trip) => trip.id === tripId);
     if (!trip) {

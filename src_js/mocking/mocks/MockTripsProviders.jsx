@@ -1,9 +1,8 @@
 import { useState } from "react";
-import mockApi from "./mockApi.js";
 import ApiProvider from "../context/ApiContext.jsx";
 import TripsProvider, { SetTripsProvider } from "../context/TripsContext.jsx";
+import mockApi from "./mockApi.js";
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default (testTrips) =>
   ({ children }) => {
     const [trips, setTrips] = useState(testTrips);

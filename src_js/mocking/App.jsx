@@ -1,11 +1,11 @@
 import { useState } from "react";
+import * as api from "./api.js";
+import DrivingAssessment from "./components/DrivingAssessment.jsx";
+import DrivingHistory from "./components/DrivingHistory.jsx";
 import TripsProvider, {
   SetTripsProvider,
   SyncTripsProvider,
 } from "./context/TripsContext.jsx";
-import * as api from "./api.js";
-import DrivingAssessment from "./components/DrivingAssessment.jsx";
-import DrivingHistory from "./components/DrivingHistory.jsx";
 
 const App = ({ trips: initialTrips }) => {
   const [trips, setTrips] = useState(initialTrips);

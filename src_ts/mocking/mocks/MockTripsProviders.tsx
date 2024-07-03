@@ -4,7 +4,6 @@ import ApiProvider from "../context/ApiContext.tsx";
 import TripsProvider, { SetTripsProvider } from "../context/TripsContext.tsx";
 import mockApi from "./mockApi.ts";
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default (testTrips: Trip[]) =>
   ({ children }: PropsWithChildren) => {
     const [trips, setTrips] = useState(testTrips);
