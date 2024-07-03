@@ -34,8 +34,6 @@ api.get("/trips/:id", (req, res) => {
 api.post("/trips/:id/confirm", (req, res) => {
   const { id } = req.params;
   const trip = trips.find((trip) => trip.id === id);
-  console.log(id)
-  console.log(trip)
   if (trip) {
     trip.confirmed = true;
     setTimeout(() => {
